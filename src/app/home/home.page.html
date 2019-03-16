@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      <h1>
+
+        Github Ranking
+
+      </h1>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <form (ngSubmit)="onSubmit()">
+    <ion-title>
+      <h6>Linguagem:</h6>
+    </ion-title>
+
+    <ion-list>
+
+      <ion-item>
+        <ion-label>Selecione uma Linguagem</ion-label>
+        <ion-select [(ngModel)]="linguagem" name="linguagem">
+          <ion-select-option value="php">PHP</ion-select-option>
+          <ion-select-option value="java">JAVA</ion-select-option>
+          <ion-select-option value="javascript">JAVASCRIP</ion-select-option>
+          <ion-select-option value="typescript">TYPESCRIPT</ion-select-option>
+          <ion-select-option value="python">PYTHON</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+    </ion-list>
+
+    <ion-button type="submit">Enviar</ion-button>
+  </form>
+  <h2>Ranking</h2>
+  <div *ngFor="let l of ordenaLista(listaLinguagem)">
+    {{ l.nome }} {{ l.quantidade }}
+  </div>
+</ion-content>
